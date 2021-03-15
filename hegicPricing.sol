@@ -1,6 +1,8 @@
 //How hegic is priced
 //amount is number of options
 
+pragma solidity 0.6.8;
+
 function fees(uint256 period, uint256 amount, uint256 strike) public view returns (uint256 total, uint256 settlementFee, uint256 strikeFee, uint256 periodFee) {
         uint256 currentPrice = uint256(priceProvider.latestAnswer());
         settlementFee = getSettlementFee(amount);
@@ -37,3 +39,7 @@ function getStrikeFee(uint256 amount, uint256 strike, uint256 currentPrice) inte
             return currentPrice.sub(strike).mul(amount).div(currentPrice);
         return 0;
     }
+    
+Reference 
+https://github.com/hegic/contracts-v1/blob/master/contracts/HegicOptions.sol
+Functions start 174, 236, 265
