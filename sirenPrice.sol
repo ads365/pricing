@@ -1,3 +1,6 @@
+pragma solidity 0.6.8;
+
+
 /**
      * @dev Calculate price of bToken based on Black-Scholes approximation.
      * Formula: 0.4 * ImplVol * sqrt(timeUntilExpiry) * currentPrice / strike
